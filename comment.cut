@@ -105,7 +105,7 @@
 {
     pdfauthor={\gitAuthorName},
     pdfsubject={TULIP Lab},
-    pdftitle={},
+    pdftitle={Learning Process},
     pdfkeywords={TULIP Lab, Data Science},
 % bookmarks=true,
 }
