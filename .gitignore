@@ -5,3 +5,8 @@ report.out
 report.blg
 report.aux
 report.tdo
+picture/*
+slides.dvi
+slides.aux
+slides.bm
+slides.tex
