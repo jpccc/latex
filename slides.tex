@@ -262,10 +262,11 @@ cf={Predict future sales},
 %%
 \begin{slide}[toc=,bm=]{Data leakages}
   target:delete stores, goods in training set but not in the test set\par
-  result:sales_train\par
-    rows:1224439\par
-    items:4716\par
-    shops:42\par
+  result:\par
+  \setlength\parindent{2em}sales_train\par
+  \setlength\parindent{4em}rows:1224439\par
+    \setlength\parindent{4em}items:4716\par
+    \setlength\parindent{4em}shops:42\par
 \end{slide}
 %%
 %%==========================================================================================
@@ -274,18 +275,11 @@ cf={Predict future sales},
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Data duplication}
-  target:See if duplicate items exist in the dataset
-  result:sales_train:0\par
-          test:0\par
-\end{slide}
-%%
-%%==========================================================================================
-
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Test set missing fill}
-
+  target:See if duplicate items exist in the dataset\par
+  result:\par
+    \setlength\parindent{2em}sales_train:6\par
+    \setlength\parindent{2em}test:0\par
+  operation:delete duplications
 \end{slide}
 %%
 %%==========================================================================================
@@ -293,8 +287,7 @@ cf={Predict future sales},
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Outliers}
-  target:Calculate the outliers of item_cnt_day and item price
-  operation:
+  target:Calculate the outliers of item_cnt_day and item price\par
   result:
 \end{slide}
 %%
@@ -340,7 +333,20 @@ cf={Predict future sales},
 %%
 %%==========================================================================================
 
+
 \section{Data analysis}
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Monthly sales of goods}
+  \begin{figure}
+    \includegraphics[scale=0.5]{picture/data_20.eps}
+  \end{figure}
+    Explain that the month is related to the sales volume of goods: the sales volume at the end of the year is increasing
+\end{slide}
+%%
+%%==========================================================================================
+
 
 %%==========================================================================================
 %%
