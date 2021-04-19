@@ -239,6 +239,20 @@ cf={Predict future sales},
               \item item_id:int
             \end{itemize}
     \end{itemize}
+    From here you can see a lot of stores, goods in training set are not in the test set
+\end{slide}
+%%
+%%==========================================================================================
+
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Missing Value and Non Value}
+  target:Find out whether there are empty values or missing values in the data\par
+  result:\par
+  missing value:0\par
+  nan value:0\par
 \end{slide}
 %%
 %%==========================================================================================
@@ -246,8 +260,12 @@ cf={Predict future sales},
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Missing Value and Non Value}
-  Find out whether there are empty values or missing values in the data
+\begin{slide}[toc=,bm=]{Data leakages}
+  target:delete stores, goods in training set but not in the test set\par
+  result:sales_train\par
+    rows:1224439\par
+    items:4716\par
+    shops:42\par
 \end{slide}
 %%
 %%==========================================================================================
@@ -256,29 +274,18 @@ cf={Predict future sales},
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Data duplication}
-  target:
-  operation:
-  result:
+  target:See if duplicate items exist in the dataset
+  result:sales_train:0\par
+          test:0\par
 \end{slide}
 %%
 %%==========================================================================================
 
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Data leakages}
-  target:
-  operation:
-  result:
-\end{slide}
-%%
-%%==========================================================================================
 
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Test set missing fill}
-  target:
-  operation:
-  result:
+
 \end{slide}
 %%
 %%==========================================================================================
