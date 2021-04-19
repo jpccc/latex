@@ -177,7 +177,7 @@ cf={Predict future sales},
 \begin{slide}[toc=,bm=]{Predict future sales}
   \begin{center}
   \begin{itemize}
-  \item given: a challenging time-series dataset consisting of daily sales data, kindly provided by one of the largest Russian software firms - 1C Company. 
+  \item given: a challenging time-series dataset consisting of daily sales data, kindly provided by one of the largest Russian software firms - 1C Company.
   \item target: predict total sales for every product and store in the next month
   \item evaluation: Submissions are evaluated by root mean squared error (RMSE)
   \end{itemize}
@@ -198,7 +198,6 @@ cf={Predict future sales},
   \item shops.csv:shop_name	shop_id\par
   \item test.csv:shop_id  item_id\par
 \end{itemize}
-take sales as an example
 \end{slide}
 %%
 %%==========================================================================================
@@ -207,9 +206,20 @@ take sales as an example
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Data Information}
-  \begin{figure}
-    \includegraphics{picture/data_1.eps}
-  \end{figure}
+  sales_train:\par
+    \begin{itemize}
+      \item 2935849 rows,6 columns
+      \item 21807 items,60 shops
+      \item data_type
+            \begin{itemize}
+              \item data: object
+              \item date_block_num: int
+              \item shop_id:int
+              \item item_id:int
+              \item item_price:float
+              \item item_cnt_day:float
+            \end{itemize}
+    \end{itemize}
 \end{slide}
 %%
 %%==========================================================================================
@@ -218,41 +228,57 @@ take sales as an example
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Data Information}
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_2.eps}
-  \end{figure}
+  test:\par
+    \begin{itemize}
+      \item 214200 rows,3 columns
+      \item 5100 items,40 shops
+      \item data_type
+            \begin{itemize}
+              \item ID:int
+              \item shop_id:int
+              \item item_id:int
+            \end{itemize}
+    \end{itemize}
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Missing Value and Non Value}
+  Find out whether there are empty values or missing values in the data
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Data duplication}
+  target:
+  operation:
+  result:
 \end{slide}
 %%
 %%==========================================================================================
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Data Information}
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_5.eps}
-  \end{figure}
+\begin{slide}[toc=,bm=]{Data leakages}
+  target:
+  operation:
+  result:
 \end{slide}
 %%
 %%==========================================================================================
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Missing Value}
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_3.eps}
-  \end{figure}
-  Other data were similarly processed and no missing.
-\end{slide}
-%%
-%%==========================================================================================
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Non Value}
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_4.eps}
-  \end{figure}
-  Other data were similarly processed.
+\begin{slide}[toc=,bm=]{Test set missing fill}
+  target:
+  operation:
+  result:
 \end{slide}
 %%
 %%==========================================================================================
@@ -260,9 +286,9 @@ take sales as an example
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Outliers}
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_6.eps}
-  \end{figure}
+  target:Calculate the outliers of item_cnt_day and item price
+  operation:
+  result:
 \end{slide}
 %%
 %%==========================================================================================
@@ -289,24 +315,20 @@ take sales as an example
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Negative}
-  Change item whose commodity price is negative to median( median)
-  \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_9.eps}
-  \end{figure}
+\begin{slide}[toc=,bm=]{outdated items}
+  target:Analyze how many products have not been sold in the last six consecutive months. How many of these products appear in the test set.
+  result:
+  There are 12391 training sets, which have not been sold in the last six months.
+  There are 164 test sets, which have not been sold in the last six months
 \end{slide}
 %%
-%%==========================================================================================
-
+%%==
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Process Steps}
-  \begin{itemize}
-    \item features engineering
-    \item Model training
-    \item Performance analysis
-  \end{itemize}
+\begin{slide}[toc=,bm=]{Negative}
+  Change item whose commodity price is negative to median
+  operation:
 \end{slide}
 %%
 %%==========================================================================================
@@ -424,6 +446,18 @@ take sales as an example
 \end{slide}
 %%
 %%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{Method One}
+  Method:The sales of the 34th month are regarded as the sales of the 35th month\par
+  operation:Count the sales volume of each item in each store in the 33rd month and merge it with test
+  Result:RMSE=1.16777
+\end{slide}
+%%
+%%==========================================================================================
+
 
 %%==========================================================================================
 %%
