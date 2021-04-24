@@ -1,4 +1,4 @@
-\documentclass[a4paper]{amsart}
+\documentclass{amsart}
 \synctex=1
 
 %=================================================================
@@ -32,16 +32,21 @@
 JiLin University, jilin 130000, China}%
 \email[A.~1]{pcjiang@tulip.academy}
 
+\author{Gang Li}
+\address[A.~2]{School of Information Technology \\
+Deakin University, Geelong, VIC 3216, Australia}%
+\email[A.~2]{gang.li@deakin.edu.au}
+
+
+
 %\thanks{Thanks to \ldots}%
 \subjclass{Artificial Intelligence}%
-\date{\today}%
+\date{\gitAuthorDate}%
 
 \input{abstract}
 
 
 \maketitle
-\newpage
-
 \tableofcontents
 
 \newpage
@@ -51,7 +56,7 @@ JiLin University, jilin 130000, China}%
 
 % ----------------------------------------------------------------
 \newpage
-\bibliography{yourbib}
+\bibliography{tuliplab,yourbib}
 % TODO: you should change this yourbib into a proper bib file name
 \bibliographystyle{plainnat}
 %=================================================================
