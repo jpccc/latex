@@ -1,0 +1,224 @@
+\documentclass{amsart}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL report_old.tex   Mon Apr 26 10:22:57 2021
+%DIF ADD report.tex       Mon Apr 26 10:22:57 2021
+\synctex=1
+
+%=================================================================
+% 
+\newcount\DraftStatus  % 0 suppresses notes to selves in text
+\DraftStatus=1   % TODO: set to 0 for final version
+%=================================================================
+
+%=================================================================
+\usepackage{comment}
+%=================================================================
+%
+\includecomment{JournalOnly}  
+\includecomment{ConferenceOnly}  
+\includecomment{TulipStyle}
+%
+%=================================================================
+\input{preamble}
+
+
+%=================================================================
+%
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+%
+%=================================================================
+%
+\title[Learning Process]{\DIFdelbegin \DIFdel{Learning Process }\DIFdelend \DIFaddbegin \DIFadd{Kaggle Project }\DIFaddend Report}%
+
+\author{PengCheng Jiang}
+\address[A.~1]{School of Computer Science,\\ 
+JiLin University, jilin 130000, China}%
+\email[A.~1]{pcjiang@tulip.academy}
+
+\author{Gang Li}
+\address[A.~2]{School of Information Technology \\
+Deakin University, Geelong, VIC 3216, Australia}%
+\email[A.~2]{gang.li@deakin.edu.au}
+
+
+
+%\thanks{Thanks to \ldots}%
+\subjclass{Artificial Intelligence}%
+\date{\gitAuthorDate}%
+
+\input{abstract}
+
+
+\maketitle
+\tableofcontents
+
+\newpage
+%=================================================================
+
+%=================================================================
+\section{Problem Definition}
+    We are given a challenging time-series dataset consisting of daily sales data, kindly provided by one of the largest Russian software firms - 1C Company.
+    Our target is predict total sales for every product and store in the next month
+    Submissions are evaluated by root mean squared error (RMSE).\DIFdelbegin \DIFdel{And we got good results in our experiment
+}\DIFdelend \DIFaddbegin \DIFadd{This report introduces how to participate in this competition, and gives the whole process of how to use python language for data cleaning, feature engineering extraction and model construction.
+}\DIFaddend \section{Data Cleaning}
+\begin{table}[h]
+    \begin{center}
+      \resizebox{\textwidth}{15mm}{
+        \begin{tabular}{c| c c c c c c}
+        \toprule
+        File & \texttt{filed1}  & \texttt{filed2} & \texttt{filed3} & \texttt{filed4} & \texttt{filed5} & \texttt{filed6}\\
+        \midrule
+        item_categories
+        &  item_category_name &  item_category_id \\
+        items
+        &  item_id &  item_category_id \\
+        sales_train
+        &  date & date_block_num &  shop_id  & item_id &  item_price &  item_cnt_day \\
+        shops
+        &  shop_name &  shop_id \\
+        test
+        &  shop_id &  item_id\\
+        \bottomrule
+        \end{tabular}
+      }
+    \end{center}
+    \caption{Data Infomation}
+  \end{table}
+  The above table is some information about the \DIFdelbegin \DIFdel{data}\DIFdelend \DIFaddbegin \DIFadd{datas}\DIFaddend .\par
+  Next, let's look at the data types of the training set \DIFaddbegin \DIFadd{which will be conducive to the subsequent processing}\DIFaddend :
+  \begin{itemize}
+    \item 2935849 rows,6 columns
+    \item 21807 items,60 shops
+    \item data_type
+          \begin{itemize}
+            \item data: object
+            \item date_block_num: int
+            \item shop_id:int
+            \item item_id:int
+            \item item_price:float
+            \item item_cnt_day:float
+          \end{itemize}
+  \end{itemize}
+  Next, let's look at the data types of the test set:
+  \begin{itemize}
+    \item 214200 rows,3 columns
+    \item 5100 items,40 shops
+    \item data_type
+          \begin{itemize}
+            \item ID:int
+            \item shop_id:int
+            \item item_id:int
+          \end{itemize}
+  \end{itemize}
+  From here you can see a lot of stores, goods in training set are not in the test set\par
+  Next, we do some common processing on the data:\par
+  \begin{itemize}
+      \item Missing Value and Non Value:Find out whether there are empty values or missing values in the data
+      \item Cartesian product:for items not sold during the month, you should add them and set them to 0(Find out all the stores and merchandise, and make cartesian product with sales_trainz)
+      \item Data leakages:delete stores, goods in training set but not in the test set
+      \item Data duplication:See if duplicate items exist in the dataset
+      \item Outliers:Calculate the outliers of item_cnt_day and item price
+  \end{itemize}
+\section{Data analysis}
+First, look at the monthly sales of goods at figure 1\par
+    \begin{figure}
+        \includegraphics[scale=0.3]{picture/data_20.eps}
+        \caption{month_total_count}\label{fig:1}
+    \end{figure}
+    Explain that the month is related to the sales volume of goods: the sales volume at the end of the year is increasing\par
+    Next, take a look at the sales of each store in figure 2\par
+    Finally, let's look at the sales of different kinds of goods in figure 3\par
+    \textbf{Item and Shop Information:}\par
+    large categories, small categories, we separate them, and code them separately to facilitate subsequent feature extraction\par
+    \textbf{Shop information:}\par
+    the city where the store is located, the type of store, which we separate and encode separately for subsequent feature extraction\par
+    \begin{figure}[b]
+        \includegraphics[scale=0.3]{picture/data_30.eps}
+        \caption{shop_count}\label{fig:2}
+    \end{figure}
+    \begin{figure}
+        \includegraphics[scale=0.3]{picture/data_31.eps}
+        \caption{item_category_count}\label{fig:3}
+    \end{figure}
+\section{Model}
+\subsection{decision tree}\par
+In machine learning, decision tree is a prediction model, which represents a mapping relationship between object attributes and object values. Each node in the tree represents an object, and each branch path represents a possible attribute value, while each leaf node corresponds to the value of the object represented by the path from the root node to the leaf node. The decision tree has only a single output, if you want to have complex output, you can establish an independent decision tree to deal with different outputs. Decision tree is a frequently used technology in data mining, which can be used to analyze data, and also can be used for prediction.
+\subsection{Candidate model}\par
+\begin{itemize}
+    \item GBDT
+    \item Xgboost
+    \item lightgbm
+    \item neural network
+\end{itemize}
+\subsection{Method One}\par
+\ 
+\newline
+The sales of the 34th month are regarded as the sales of the 35th month,Count the sales volume of each item in each store in the 33rd month and merge it with test
+The result is \textbf{RMSE=1.16777}
+\subsection{Method Two}
+\ 
+\newline
+\textbf{Features:}\par
+  \begin{itemize}
+    \item shop_id
+    \item item_id
+    \item item_cnt_month
+  \end{itemize}
+  The model we choosed is lightgbm,and The result is \textbf{RMSE=}
+
+\subsection{Method Three}\par
+\ 
+\newline
+Adding historical information is good for prediction. We can see the features after adding historical information in Figure 4.
+Finally, through experiments, it can be proved that the prediction results are improved.
+\textbf{training's rmse: 0.664209,valid_1's rmse: 0.880256}
+\begin{figure}
+    \includegraphics[scale=0.3]{picture/data_16.eps}
+    \caption{final features}\label{fig:4}
+\end{figure}
+\section{Conlusion}
+Through data processing and adding delay information, the model achieves good results
+
+
+
+\end{document}
+
