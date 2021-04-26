@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.21)  26 APR 2021 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.21)  26 APR 2021 11:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1134,20 +1134,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 Non-PDF special ignored!
 <special> header=psfrag.pro
 {d:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package epstopdf Info: Source file: <picture/data_20.eps>
-(epstopdf)                    date: 2021-04-20 20:19:56
-(epstopdf)                    size: 33733 bytes
-(epstopdf)             Output file: <picture/data_20-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-24 09:45:35
-(epstopdf)                    size: 28159 bytes
-(epstopdf)             Command: <repstopdf --outfile=picture/data_20-eps-converted-to.pdf picture/data_20.eps>
-(epstopdf)             \includegraphics on input line 122.
-Package epstopdf Info: Output file is already uptodate.
-<picture/data_20-eps-converted-to.pdf, id=93, 545.03625pt x 344.28625pt>
-File: picture/data_20-eps-converted-to.pdf Graphic file (type pdf)
-<use picture/data_20-eps-converted-to.pdf>
-Package pdftex.def Info: picture/data_20-eps-converted-to.pdf  used on input line 122.
-(pdftex.def)             Requested size: 163.51213pt x 103.28667pt.
 Package epstopdf Info: Source file: <logos/tulip-logo.eps>
 (epstopdf)                    date: 2021-04-05 09:15:55
 (epstopdf)                    size: 1059122 bytes
@@ -1155,12 +1141,12 @@ Package epstopdf Info: Source file: <logos/tulip-logo.eps>
 (epstopdf)                    date: 2021-04-05 15:35:29
 (epstopdf)                    size: 21812 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/tulip-logo-eps-converted-to.pdf logos/tulip-logo.eps>
-(epstopdf)             \includegraphics on input line 124.
+(epstopdf)             \includegraphics on input line 117.
 Package epstopdf Info: Output file is already uptodate.
-<logos/tulip-logo-eps-converted-to.pdf, id=94, 456.70625pt x 622.325pt>
+<logos/tulip-logo-eps-converted-to.pdf, id=93, 456.70625pt x 622.325pt>
 File: logos/tulip-logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logos/tulip-logo-eps-converted-to.pdf>
-Package pdftex.def Info: logos/tulip-logo-eps-converted-to.pdf  used on input line 124.
+Package pdftex.def Info: logos/tulip-logo-eps-converted-to.pdf  used on input line 117.
 (pdftex.def)             Requested size: 7.92348pt x 10.79993pt.
 
 
@@ -1170,6 +1156,20 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [2 <./logos/tulip-logo-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <picture/data_20.eps>
+(epstopdf)                    date: 2021-04-20 20:19:56
+(epstopdf)                    size: 33733 bytes
+(epstopdf)             Output file: <picture/data_20-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-24 09:45:35
+(epstopdf)                    size: 28159 bytes
+(epstopdf)             Command: <repstopdf --outfile=picture/data_20-eps-converted-to.pdf picture/data_20.eps>
+(epstopdf)             \includegraphics on input line 122.
+Package epstopdf Info: Output file is already uptodate.
+<picture/data_20-eps-converted-to.pdf, id=106, 545.03625pt x 344.28625pt>
+File: picture/data_20-eps-converted-to.pdf Graphic file (type pdf)
+<use picture/data_20-eps-converted-to.pdf>
+Package pdftex.def Info: picture/data_20-eps-converted-to.pdf  used on input line 122.
+(pdftex.def)             Requested size: 163.51213pt x 103.28667pt.
 Package epstopdf Info: Source file: <picture/data_30.eps>
 (epstopdf)                    date: 2021-04-20 20:20:01
 (epstopdf)                    size: 62610 bytes
@@ -1248,11 +1248,11 @@ Package epstopdf Info: Source file: <logos/tulip-logo.eps>
 (epstopdf)                    date: 2021-04-05 15:35:29
 (epstopdf)                    size: 21812 bytes
 (epstopdf)             Command: <repstopdf --outfile=logos/tulip-logo-eps-converted-to.pdf logos/tulip-logo.eps>
-(epstopdf)             \includegraphics on input line 181.
+(epstopdf)             \includegraphics on input line 176.
 Package epstopdf Info: Output file is already uptodate.
 File: logos/tulip-logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logos/tulip-logo-eps-converted-to.pdf>
-Package pdftex.def Info: logos/tulip-logo-eps-converted-to.pdf  used on input line 181.
+Package pdftex.def Info: logos/tulip-logo-eps-converted-to.pdf  used on input line 176.
 (pdftex.def)             Requested size: 7.92348pt x 10.79993pt.
 [4 <./picture/data_31-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <logos/tulip-logo.eps>
@@ -1277,18 +1277,22 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: FDC391752A9EAEACE7A02CE36F73AC44;579.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 33264 strings out of 480608
- 658542 string characters out of 5907536
- 1081305 words of memory out of 5000000
+ 33268 strings out of 480608
+ 658574 string characters out of 5907536
+ 1080305 words of memory out of 5000000
  48265 multiletter control sequences out of 15000+600000
- 541769 words of font info for 78 fonts, out of 8000000 for 9000
+ 541871 words of font info for 80 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 71i,14n,102p,929b,785s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,14n,102p,929b,808s stack positions out of 5000i,500n,10000p,200000b,80000s
 <d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on report.pdf (5 pages, 307068 bytes).
+Output written on report.pdf (5 pages, 307818 bytes).
 PDF statistics:
  180 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
