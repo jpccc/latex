@@ -401,7 +401,19 @@ cf={Predict future sales},
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{outdated ships}
+\begin{slide}[toc=,bm=]{outdated items and Negative}  
+  \twotonebox{\parbox{.1\textwidth}{Negative}}{\parbox{.76\textwidth}
+  {
+    Change item whose commodity price is negative to median
+  }}
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
+\begin{slide}[toc=,bm=]{outdated shops}
   \twotonebox{\parbox{.1\textwidth}{target}}{\parbox{.76\textwidth}
   {
     Analyze how many shops have not been closed
@@ -418,16 +430,6 @@ cf={Predict future sales},
 %%==========================================================================================
 
 
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{outdated items and Negative}  
-  \twotonebox{\parbox{.1\textwidth}{Negative}}{\parbox{.76\textwidth}
-  {
-    Change item whose commodity price is negative to median
-  }}
-\end{slide}
-%%
-%%==========================================================================================
 
 \section{Data analysis}
 
@@ -535,33 +537,9 @@ cf={Predict future sales},
 %%
 %%==========================================================================================
 
-
 %%==========================================================================================
 %%
 \begin{slide}[toc=,bm=]{Method Two}
-  \twotonebox{\parbox{.1\textwidth}{Features}}{\parbox{.76\textwidth}
-  {
-    \begin{itemize}
-      \item shop_id
-      \item item_id
-      \item item_cnt_month
-    \end{itemize}
-  }}
-  \twotonebox{\parbox{.1\textwidth}{Method}}{\parbox{.76\textwidth}
-  {
-    lightgbm
-  }}
-  \twotonebox{\parbox{.1\textwidth}{Result}}{\parbox{.76\textwidth}
-  {
-    RMSE=
-  }}
-\end{slide}
-%%
-%%==========================================================================================
-
-%%==========================================================================================
-%%
-\begin{slide}[toc=,bm=]{Method Three}
   \twotonebox{\parbox{.1\textwidth}{Data feature}}{\parbox{.76\textwidth}
   {
     'date_block_num', 'shop_id', 'item_id', 'item_category_id', 'cat_type_code', 'cat_subtype_code', 'shop_city_code', 'shop_type_code'
@@ -590,9 +568,9 @@ cf={Predict future sales},
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Method Three}
+\begin{slide}[toc=,bm=]{Method Two}
   \begin{figure}
-    \includegraphics[scale=0.5]{picture/data_16.eps}
+    \includegraphics[scale=0.4]{picture/data_16.eps}
   \end{figure}
 \end{slide}
 %%
@@ -600,10 +578,9 @@ cf={Predict future sales},
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Method Three}
+\begin{slide}[toc=,bm=]{Method Two}
   \twotonebox{\parbox{.1\textwidth}{Result}}{\parbox{.76\textwidth}
   {\begin{itemize}
-    \item training's rmse: 0.664209
     \item valid_1's rmse: 0.880256
   \end{itemize}
   }}
@@ -611,6 +588,5 @@ cf={Predict future sales},
 %%
 %%==========================================================================================
 
-\section{Lightgbm}
 
 \end{document}

@@ -105,21 +105,22 @@
     \item target: predict total sales for every product and store in the next month
     \item evaluation: Submissions are evaluated by root mean squared error (RMSE)
     \end{itemize}
+    
+  
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block{Data Cleaning}{
-\begin{itemize}
-  \item Missing Value and Non Value
-  \item Cartesian product
-  \item Data leakages
-  \item Data duplication
-  \item Outliers
-  \item outdated items
-  \item Negative
-\end{itemize}
+\begin{description}
+  \item[Missing Value and Non Value]:Finding null and missing values
+  \item[Cartesian product]:  Finding those in test set instead of training set
+  \item[Data leakages]: Finding those in training set instead of test set
+  \item[ Data duplication]: Finding duplicative items
+  \item[outdated items]:Finding outdated  items
+  \item[Negative] :Finding negative values
+\end{description}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
@@ -136,15 +137,18 @@
 
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block{Data analysis}{
-  	\begin{itemize}
-      \item Monthly sales of goods
-      \item Shop sales
-      \item Sales of different category
-      \item Item and Shop Information
-    \end{itemize}
+  \begin{itemize}
+    \item Monthly sales of goods
+    \item Shop sales
+    \item Sales of different category
+    \item Item and Shop Information
+  \end{itemize}
+\begin{center}
+  \includegraphics[scale=0.8]{picture/data_18.eps}
+  \includegraphics[scale=0.8]{picture/data_30.eps}
+\end{center}
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-
 
 % SECOND column
 \column{0.5}
@@ -170,33 +174,42 @@
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
+\block[titleleft]{future selection}
+{
+  \begin{description}
+    \item[Data feature] 'dateblocknum', 'shopid', 'itemid', 'itemcategoryid', \par
+    'cattypecode', 'catsubtypecode', 'shopcitycode', 'shoptypecode'
+  \end{description}
+    
+  
+ 
+    \begin{itemize}
+      \item item\_cnt\_month
+      \item date\_avg\_item\_cnt
+      \item date\_item\_avg\_item\_cnt
+      \item date\_shop\_avg\_item\_cnt
+      \item date\_cat\_avg\_item\_cnt
+      \item date\_cat\_shop\_avg\_item\_cnt
+      \item date\_type\_avg\_item\_cnt
+      \item date\_item\_type\_avg\_item\_cnt
+      \item date\_city\_avg\_item\_cnt
+    \end{itemize}
+    delay:1,2,3,6,12
+
+}
+%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 % Second column - second block
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 \block[titleleft]{Conclusion}
 {
-
- $training's rmse: 0.664209$
  $valid_1's rmse: 0.880256$
 
 }
 %%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
 
 
-% Bottomblock
-%%%%%%%%%% -------------------------------------------------------------------- %%%%%%%%%%
-\colorlet{notebgcolor}{blue!20}
-\colorlet{notefrcolor}{blue!20}
-\note[targetoffsetx=8cm, targetoffsety=-5cm, angle=30, rotate=15,
-radius=2cm, width=.26\textwidth]{
-Acknowledgement
-\begin{itemize}
-    \item
-    International Cooperation Project (Y7Z0511101)
-    of IIE,
-    Chinese Academy of Sciences
- \end{itemize}
-}
 
 %\note[targetoffsetx=8cm, targetoffsety=-10cm,rotate=0,angle=180,radius=8cm,width=.46\textwidth,innersep=.1cm]{
 %Acknowledgement
@@ -218,7 +231,7 @@ Acknowledgement
 %\colorlet{noteframecolor}{blue!20}
 \colorlet{notebgcolor}{blue!20}
 \colorlet{notefrcolor}{blue!20}
-\note[targetoffsetx=-13cm, targetoffsety=-15cm,rotate=0,angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
+\note[targetoffsetx=-13cm, targetoffsety=-13cm,rotate=0,angle=180,radius=8cm,width=.96\textwidth,innersep=.4cm]
 {
 \begin{minipage}{0.3\linewidth}
 \centering
