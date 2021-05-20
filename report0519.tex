@@ -1,0 +1,112 @@
+\documentclass{amsart}
+\synctex=1
+
+%=================================================================
+% 
+\newcount\DraftStatus  % 0 suppresses notes to selves in text
+\DraftStatus=1   % TODO: set to 0 for final version
+%=================================================================
+
+%=================================================================
+\usepackage{comment}
+%=================================================================
+%
+\includecomment{JournalOnly}  
+\includecomment{ConferenceOnly}  
+\includecomment{TulipStyle}
+%
+%=================================================================
+\input{preamble}
+
+
+%=================================================================
+%
+\begin{document}
+%
+%=================================================================
+%
+\title[Learning Process]{Learning progress report}%
+
+\author{PengCheng Jiang}
+\address[A.~1]{School of Computer Science,\\ 
+JiLin University, jilin 130000, China}%
+\email[A.~1]{pcjiang@tulip.academy}
+
+
+%\thanks{Thanks to \ldots}%
+\subjclass{Artificial Intelligence}%
+\date{\gitAuthorDate}%
+
+
+\maketitle
+\tableofcontents
+
+\newpage
+%=================================================================
+
+%=================================================================
+\section{Introduction to machine learning}
+    \begin{itemize}
+        \item The process of machine learning
+        \item Why use machine learning
+        \item Application scenarios of machine learning
+        \item Three key problems of machine learning       
+    \end{itemize}    
+\section{linear regression}
+    \begin{itemize}
+        \item The concept of linear regression
+        \item Loss function of logistic regression
+            \begin{itemize}
+                \item mean square error
+            \end{itemize}
+        \item The solution of logistic regression
+            \begin{itemize}
+                \item Gradient descent method
+                \item least square method(Matrix of full rank,maximum likelihood)
+            \end{itemize}
+        \item Methods to solve the underfitting and overfitting
+    \end{itemize}   
+\section{logistic regression}
+    \begin{itemize}
+        \item Logistic distribution and density function
+        \item The concept of logistic regression
+        \item Loss function of logistic regression
+            \begin{itemize}
+                \item maximum likelihood
+            \end{itemize}
+        \item The solution of logistic regression
+            \begin{itemize}
+                \item Gradient descent method
+                \item Newton method
+            \end{itemize}   
+        \item The method and significance of regularization
+            \begin{itemize}
+                \item L1 regularization: LASSO regularization
+                \item L2 regularization: Ridge regularization
+                \item the difference between L1 and L2
+            \end{itemize}
+        \item Parallelization of gradient computation of objective function
+        \item Comparison with other models
+            \begin{itemize}
+                \item linear regression
+                \item maximum entropy model
+                \item SVM
+                \item Naive Bayes
+            \end{itemize}
+    \end{itemize}
+\section{K-nearest neighbor model}
+\begin{itemize}
+    \item concept
+        \begin{itemize}
+            \item Distance measurement
+            \item Selection of K value
+            \item Classification decision rules
+        \end{itemize}
+    \item kd tree
+        \begin{itemize}
+            \item The construction of KD tree
+            \item The search of KD tree
+        \end{itemize}
+\end{itemize}
+\end{document}
+
