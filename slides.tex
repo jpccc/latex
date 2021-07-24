@@ -178,7 +178,8 @@ cf={Predict future sales},
   \begin{center}
     \twotonebox{\parbox{.1\textwidth}{given}}{\parbox{.76\textwidth}
     {
-      A tagged dataset containing comments
+      A tagged dataset containing comments.
+      Target 0 for malicious comments and 1 for friendly comments.
     }}
     \twotonebox{\parbox{.1\textwidth}{target}}{\parbox{.76\textwidth}
     {
@@ -186,7 +187,7 @@ cf={Predict future sales},
     }}
     \twotonebox{\parbox{.1\textwidth}{evaluate}}{\parbox{.76\textwidth}
     {
-      ACC
+      ACC.
     }}
   \end{center}
 \end{slide}
@@ -248,6 +249,10 @@ cf={Predict future sales},
     {
       First learn the dictionary of the text, and then get the corresponding relationship between words and numbers, and then convert the text into a number string through this relationship, and then use the padding method to make up the number string to the same degree, then you can proceed to the next step : embedding
     }}
+    \twotonebox{\parbox{.1\textwidth}{Method}}{\parbox{.76\textwidth}
+    {
+      collections.counter,pytorch:torchtext.vocab,
+    }}
   \end{center}
 \end{slide}
 %%
@@ -262,6 +267,10 @@ cf={Predict future sales},
       {
         The embedding layer is the same as word2vec. Whether it is skip gram or cbow model, they infer each other from the context and the current, so we consider the relationship between the preceding and the following.
       }}
+      \twotonebox{\parbox{.1\textwidth}{Method}}{\parbox{.76\textwidth}
+      {
+        glove.42B.300d.txt
+      }}
   \end{center}
 \end{slide}
 %%
@@ -274,16 +283,12 @@ cf={Predict future sales},
   \begin{center}
       \twotonebox{\parbox{.1\textwidth}{Instruction}}{\parbox{.76\textwidth}
       {
-        The embedding layer is the same as word2vec. Whether it is skip gram or cbow model, they infer each other from the context and the current, so we consider the relationship between the preceding and the following.
+        BiRNN:In practical problems, there are also problems that not only rely on the previous sequence, but also rely on the subsequent sequence for prediction. For those problems, we need to use bidirectional RNN (birnn)
       }}
 
-      \twotonebox{\parbox{.1\textwidth}{output}}{\parbox{.76\textwidth}
+      \twotonebox{\parbox{.1\textwidth}{setting}}{\parbox{.76\textwidth}
       {
-        The embedding layer is the same as word2vec. Whether it is skip gram or cbow model, they infer each other from the context and the current, so we consider the relationship between the preceding and the following.
-      }}
-      \twotonebox{\parbox{.1\textwidth}{Dense}}{\parbox{.76\textwidth}
-      {
-        Map the result of LSTM to 0-1,activation='sigmoid'
+        embed_size, num_hiddens, num_layers = 300, 100, 2
       }}
   \end{center}
 \end{slide}
@@ -295,9 +300,7 @@ cf={Predict future sales},
 %%
 \begin{slide}[toc=,bm=]{LSTM}
   \begin{center}
-    \begin{figure}
-      \includegraphics[scale=0.5]{picture/lstm.eps}
-    \end{figure}
+
   \end{center}
 \end{slide}
 %%
@@ -305,9 +308,22 @@ cf={Predict future sales},
 
 %%==========================================================================================
 %%
+\begin{slide}[toc=,bm=]{Birnn}
+  \begin{center}
+    \begin{figure}
+      \includegraphics[scale=0.5]{picture/birnn.eps}
+    \end{figure}
+  \end{center}
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%==========================================================================================
+%%
 \begin{slide}[toc=,bm=]{Result}
   \begin{center}
-    loss: 0.1937 - acc: 0.9401
+    acc: 0.9468
   \end{center}
 \end{slide}
 %%
